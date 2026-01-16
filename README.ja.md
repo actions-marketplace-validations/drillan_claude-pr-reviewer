@@ -17,6 +17,23 @@ Claude AI を使用した自動 PR レビュー GitHub Action です。[pr-revie
 - **コメント正確性検証**: コードコメントと実装の整合性チェック
 - **対話的レビュー**: PR コメントで `@claude` とメンションすると追加レビューや質問への回答を取得
 
+## 前提条件
+
+このアクションを使用する前に、Claude Code GitHub Actions のセットアップが必要です。詳細は[公式ドキュメント](https://code.claude.com/docs/ja/github-actions)を参照してください。
+
+### クイックセットアップ（推奨）
+
+Claude Code のターミナルで以下のコマンドを実行します：
+
+```bash
+/install-github-app
+```
+
+### 手動セットアップ
+
+1. GitHub App をインストール: https://github.com/apps/claude
+2. リポジトリの Secrets に API キーを追加（[認証設定](#認証設定)を参照）
+
 ## 使用方法
 
 ### 基本的なワークフロー（OAuth Token）
@@ -178,7 +195,7 @@ Bash(gh pr comment:*),Bash(gh pr review:*),Bash(gh pr diff:*),Bash(gh pr view:*)
 - uses: drillan/claude-pr-reviewer@v1
   with:
     claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-    anthropic_model: claude-sonnet-4-5-20250929
+    anthropic_model: claude-haiku-4-5-20251001
 ```
 
 ### カスタムプロンプトを追加

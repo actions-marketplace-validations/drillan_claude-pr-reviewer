@@ -17,6 +17,23 @@ A GitHub Action for automated PR reviews using Claude AI. It leverages the [pr-r
 - **Comment Accuracy Verification**: Check consistency between code comments and implementation
 - **Interactive Review**: Mention `@claude` in PR comments to request additional reviews or ask questions
 
+## Prerequisites
+
+Before using this action, you need to set up Claude Code GitHub Actions. See the [official documentation](https://code.claude.com/docs/en/github-actions) for details.
+
+### Quick Setup (Recommended)
+
+Run the following command in Claude Code terminal:
+
+```bash
+/install-github-app
+```
+
+### Manual Setup
+
+1. Install the GitHub App: https://github.com/apps/claude
+2. Add API key to repository secrets (see [Authentication Setup](#authentication-setup))
+
 ## Usage
 
 ### Basic Workflow (OAuth Token)
@@ -178,7 +195,7 @@ Two authentication methods are available:
 - uses: drillan/claude-pr-reviewer@v1
   with:
     claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-    anthropic_model: claude-sonnet-4-5-20250929
+    anthropic_model: claude-haiku-4-5-20251001
 ```
 
 ### Add Custom Prompt
